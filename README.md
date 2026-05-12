@@ -1,174 +1,73 @@
-# Hexis AI
-
-A modern, full-stack AI-powered application combining Spring Boot backend excellence with a sleek React frontend.
+# 🤖 Hexis AI
+> A full-stack AI-powered chat application that converts your queries into intelligent responses — and speaks them aloud.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Java](https://img.shields.io/badge/Java-17+-ED8B00?logo=java&logoColor=white)](https://www.oracle.com/java/)
+[![Java](https://img.shields.io/badge/Java-17+-ED8B00?logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
 [![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react&logoColor=black)](https://react.dev)
 
+---
 
-## Features
+## 📌 Overview
 
-- **AI-Powered Intelligence** – Leverages advanced language models for intelligent, context-aware responses
-- **Text-to-Speech Integration** – Converts AI responses to natural speech using ElevenLabs with Samisha voice
-- **High-Performance UI** – Responsive React interface with smooth interactions
-- **Secure Backend** – Spring Boot API with production-ready security
-- **Cross-Platform Support** – Works seamlessly on all modern browsers
-- **Simple API Design** – Minimal endpoints optimized for core functionality
+Hexis AI is a full-stack application that connects a React frontend to a Spring Boot backend, which orchestrates a three-way pipeline: user input → ChatGPT (AI response) → ElevenLabs (text-to-speech). The result is a conversational AI experience that you can both read and hear.
 
-## Architecture
+Built as a personal project to explore AI integrations, REST API design, and how multiple third-party services can work together in a clean, maintainable backend architecture.
 
-```
-Hexis AI
-├── Frontend (React)
-│   ├── Chat Interface
-│   ├── Voice Integration
-│   └── State Management
-│
-└── Backend (Spring Boot)
-    ├── REST API
-    ├── AI Integration
-    └── ElevenLabs TTS
-```
+---
 
-**Frontend:** React handles the user interface, manages chat state, and communicates with the backend via REST APIs.
+## ✨ Features
 
-**Backend:** Spring Boot manages AI service integration, text-to-speech conversion, and API endpoints.
+- 💬 **AI Chat** – Send messages and receive intelligent, context-aware responses via OpenAI's ChatGPT
+- 🔊 **Text-to-Speech** – AI responses are converted to natural audio using ElevenLabs (Samisha voice)
+- ⚡ **Fast React UI** – Responsive, modern interface with smooth user interactions
+- 🔐 **Secure Backend** – Production-ready Spring Boot API handling all service communication
+- 🌐 **Cross-Platform** – Works on all modern browsers, desktop and mobile
 
-## Prerequisites
+---
 
-Before getting started, ensure you have the following installed:
+## 🛠 Tech Stack
 
-- **Java 17+** ([Download](https://www.oracle.com/java/technologies/downloads/))
-- **Maven 3.8+** (included with most IDEs like IntelliJ)
-- **npm or yarn** (included with Node.js)
-- **Git** ([Download](https://git-scm.com/))
+### Frontend
+- React 18+
+- Vite (dev server & build tool)
 
-## Installation & Setup
+### Backend
+- Java 17+
+- Spring Boot 3.x
+- Maven
 
-### 1. Clone the Repository
+### External APIs
+- OpenAI API (ChatGPT) – AI response generation
+- ElevenLabs API – Text-to-speech synthesis (Samisha voice)
 
-```bash
-git clone https://github.com/yourusername/hexis-ai.git
-cd hexis-ai
-```
+---
 
-### 2. Backend Setup (Spring Boot)
+## 📸 Screenshots
 
-```bash
-cd backend
-mvn clean install
-mvn spring-boot:run
-```
+### Home / Chat Interface
+> *(Coming soon)*
 
-The backend will be available at `http://localhost:8080`
+### Voice Response in Action
+> *(Coming soon)*
 
-### 3. Frontend Setup (React)
+### Mobile View
+> *(Coming soon)*
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+---
 
-The frontend will be available at `http://localhost:5173` (or your configured port)
-
-## Configuration
-
-Before running the application, you need to configure your API keys:
-
-### Backend Configuration
-
-Update the application configuration with your API keys in the Spring Boot application properties or as system environment variables:
-
-- **OpenAI API Key** – Required for AI responses
-- **ElevenLabs API Key** – Required for text-to-speech functionality
-
-Example configuration in `application.properties`:
-
-```properties
-openai.api.key=your_openai_api_key
-elevenlabs.api.key=your_elevenlabs_api_key
-elevenlabs.voice.id=samisha
-```
-
-Or set as environment variables:
-
-```bash
-export OPENAI_API_KEY=your_openai_api_key
-export ELEVENLABS_API_KEY=your_elevenlabs_api_key
-```
-
-### Frontend Configuration
-
-Create a `.env.local` file in the frontend directory:
-
-```
-VITE_API_URL=http://localhost:8080/api
-```
-
-## Usage
-
-1. **Start the Backend** – Run the Spring Boot application
-2. **Start the Frontend** – Run the React development server
-3. **Open Your Browser** – Navigate to `http://localhost:5173`
-4. **Enter Your Query** – Type your question or request
-5. **Receive Response** – Get AI response with optional voice synthesis
-
-## API Endpoints
-
-### POST `/api/chat`
-
-Send a text query and receive an AI-generated response.
-
-**Request:**
-```json
-{
-  "message": "What is the weather today?"
-}
-```
-
-**Response:**
-```json
-{
-  "response": "I don't have access to real-time weather data...",
-  "timestamp": "2025-10-10T12:34:56Z"
-}
-```
-
-### POST `/api/voice`
-
-Send a text query and receive an AI response converted to speech using ElevenLabs Samisha voice.
-
-**Request:**
-```json
-{
-  "message": "Tell me a joke"
-}
-```
-
-**Response:**
-```json
-{
-  "audioUrl": "data:audio/mpeg;base64,...",
-  "message": "Why did the developer go broke?...",
-  "timestamp": "2025-10-10T12:34:56Z"
-}
-```
-
-## Project Structure
+## 🏗 Project Structure
 
 ```
 hexis-ai/
+│
 ├── backend/
 │   ├── src/
 │   │   ├── main/
-│   │   │   ├── java/
-│   │   │   │   └── com/hexis/
-│   │   │   │       ├── controller/
-│   │   │   │       ├── service/
-│   │   │   │       └── config/
+│   │   │   ├── java/com/hexis/
+│   │   │   │   ├── controller/
+│   │   │   │   ├── service/
+│   │   │   │   └── config/
 │   │   │   └── resources/
 │   │   │       └── application.properties
 │   │   └── test/
@@ -186,61 +85,162 @@ hexis-ai/
 └── README.md
 ```
 
-## Contributing
+---
 
-We welcome contributions! Here's how to get started:
+## ⚙️ Installation & Setup
 
-### Steps to Contribute
+### 1. Clone the Repository
 
-1. **Fork the Repository**
-   ```bash
-   # Click the "Fork" button on GitHub
-   ```
+```bash
+git clone https://github.com/vedant05bhombe-netizen/hexis-ai.git
+cd hexis-ai
+```
 
-2. **Create a Feature Branch**
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
+### 2. Backend Setup
 
-3. **Commit Your Changes**
-   ```bash
-   git commit -m "Add feature: brief description"
-   ```
+```bash
+cd backend
+mvn clean install
+mvn spring-boot:run
+```
 
-4. **Push to Your Branch**
-   ```bash
-   git push origin feature/your-feature-name
-   ```
+Backend runs at: `http://localhost:8080`
 
-5. **Open a Pull Request**
-   - Provide a clear description of your changes
-   - Reference any related issues
-   - Ensure all tests pass
+### 3. Frontend Setup
 
-### Contribution Guidelines
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-- Follow existing code style and conventions
-- Write clear, descriptive commit messages
-- Add tests for new features
-- Update documentation as needed
-- Keep pull requests focused and atomic
-
-## License
-
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
-
-## Support & Issues
-
-Found a bug or have a feature request? Please open an [issue on GitHub](https://github.com/yourusername/hexis-ai/issues).
-
-## Resources
-
-- [Spring Boot Documentation](https://spring.io/projects/spring-boot)
-- [React Official Docs](https://react.dev)
-- [OpenAI API Documentation](https://platform.openai.com/docs)
-- [ElevenLabs API Documentation](https://elevenlabs.io/docs)
-- [Maven Guide](https://maven.apache.org/guides/)
+Frontend runs at: `http://localhost:5173`
 
 ---
 
-Made with care by the Hexis AI Team
+## 🔑 Environment Variables
+
+### Backend — `application.properties`
+
+```properties
+openai.api.key=your_openai_api_key
+elevenlabs.api.key=your_elevenlabs_api_key
+elevenlabs.voice.id=samisha
+```
+
+Or as environment variables:
+
+```bash
+export OPENAI_API_KEY=your_openai_api_key
+export ELEVENLABS_API_KEY=your_elevenlabs_api_key
+```
+
+### Frontend — `.env.local`
+
+```
+VITE_API_URL=http://localhost:8080/api
+```
+
+---
+
+## 📡 API Endpoints
+
+| Method | Endpoint     | Description                                      |
+|--------|--------------|--------------------------------------------------|
+| POST   | `/api/chat`  | Send a message, receive an AI-generated response |
+| POST   | `/api/voice` | Send a message, receive response as audio (TTS)  |
+
+### `POST /api/chat`
+
+**Request:**
+```json
+{
+  "message": "What is the weather today?"
+}
+```
+
+**Response:**
+```json
+{
+  "response": "I don't have access to real-time weather data...",
+  "timestamp": "2025-10-10T12:34:56Z"
+}
+```
+
+### `POST /api/voice`
+
+**Request:**
+```json
+{
+  "message": "Tell me a joke"
+}
+```
+
+**Response:**
+```json
+{
+  "audioUrl": "data:audio/mpeg;base64,...",
+  "message": "Why did the developer go broke?...",
+  "timestamp": "2025-10-10T12:34:56Z"
+}
+```
+
+---
+
+## 🧠 Challenges Faced
+
+### Three-Way Service Orchestration
+The core challenge was understanding and implementing the full pipeline: user input → OpenAI (generate response) → ElevenLabs (convert response to audio) → frontend (play audio). Each service has its own request/response format, authentication, and failure modes. Getting all three to work together reliably — and handling errors at each stage — required careful service design in the Spring Boot backend.
+
+---
+
+## 📚 What I Learned
+
+- How to integrate multiple third-party APIs in a single backend service
+- Designing a clean service layer in Spring Boot that separates concerns between AI and TTS logic
+- Handling base64 audio data across the backend–frontend boundary
+- The importance of error handling when chaining external API calls
+
+---
+
+## 🚀 Future Improvements
+
+- [ ] Add conversation history / multi-turn chat memory
+- [ ] Let users choose from multiple ElevenLabs voices
+- [ ] Add OAuth-based authentication
+- [ ] Deploy to a cloud platform (Render / Railway)
+- [ ] Improve mobile UI responsiveness
+- [ ] Add streaming responses for faster perceived performance
+
+---
+
+## 👨‍💻 Author
+
+**Vedant Bhombe**
+
+- GitHub: [@vedant05bhombe-netizen](https://github.com/vedant05bhombe-netizen)
+- LinkedIn: [vedant-bhombe-01a865290](https://www.linkedin.com/in/vedant-bhombe-01a865290/)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how:
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "Add feature: description"`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Open a Pull Request
+
+Please follow existing code style, write clear commit messages, and add tests for new features.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+*Made with care by Vedant Bhombe*
