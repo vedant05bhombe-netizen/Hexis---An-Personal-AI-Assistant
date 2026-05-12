@@ -46,7 +46,7 @@ Built as a personal project to explore AI integrations, REST API design, and how
 ## 📸 Screenshots
 
 ### Home / Chat Interface
-> *(Coming soon)*
+> https://github.com/vedant05bhombe-netizen/Hexis---An-Personal-AI-Assistant/issues/1#issue-4427891635
 
 ### Voice Response in Action
 > *(Coming soon)*
