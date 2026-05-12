@@ -1,7 +1,6 @@
 # 🤖 Hexis AI
 > A full-stack AI-powered chat application that converts your queries into intelligent responses — and speaks them aloud.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Java](https://img.shields.io/badge/Java-17+-ED8B00?logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
 [![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react&logoColor=black)](https://react.dev)
@@ -45,14 +44,11 @@ Built as a personal project to explore AI integrations, REST API design, and how
 
 ## 📸 Screenshots
 
-### Home / Chat Interface
-> https://github.com/vedant05bhombe-netizen/Hexis---An-Personal-AI-Assistant/issues/1#issue-4427891635
+### Chat Interface
+![Hexis AI Chat](https://raw.githubusercontent.com/vedant05bhombe-netizen/Hexis---An-Personal-AI-Assistant/master/Screenshot%202026-05-12%20145020.png)
 
-### Voice Response in Action
-> *(Coming soon)*
-
-### Mobile View
-> *(Coming soon)*
+### Dev Console — API Pipeline Working
+![Hexis AI Console](https://raw.githubusercontent.com/vedant05bhombe-netizen/Hexis---An-Personal-AI-Assistant/master/Screenshot%202026-05-12%20145045.png)
 
 ---
 
@@ -234,12 +230,6 @@ Contributions are welcome! Here's how:
 5. Open a Pull Request
 
 Please follow existing code style, write clear commit messages, and add tests for new features.
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
